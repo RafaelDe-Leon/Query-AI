@@ -8,3 +8,56 @@ body {
   justify-content: center;
   flex-direction: column;
 }
+.p-heading {
+  margin-top: 0;
+}
+.header-button-container {
+  margin-bottom: 1rem;
+}
+.primary-btn,
+.success-btn,
+.danger-btn {
+  border-radius: 0.375rem;
+  padding: 0.5rem 1.5rem;
+  width: 9rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  color: white;
+  cursor: pointer;
+  margin: 0 0.4rem;
+}
+.primary-btn:hover {
+  background-color: rgb(33, 122, 231);
+}
+.success-btn:hover {
+  background-color: green;
+}
+.danger-btn:hover {
+  background-color: red;
+}
+.btns-hover:hover {
+  transform: scale(1.2);
+  transition: transform 0.5s;
+}
+.search-bar-container {
+  width: 50%;
+}
+.search-button {
+  padding: 9px;
+  width: 70px;
+  color: white;
+  cursor: pointer;
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+.search-button:hover {
+  background-color: rgb(33, 122, 231);
+}
+.search-bar {
+  width: 89%;
+  padding: 0.75rem 1rem;
+  background-color: #1f2937;
+  border: lightgrey;
+  color: white;
+  margin-bottom: 1rem;
+}
