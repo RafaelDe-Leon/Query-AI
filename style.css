@@ -2,9 +2,69 @@ body {
   background-color: #111827;
   color: white;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
 .center {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.queries-container {
+  display: flex;
+  width: 1000px;
+  height: 100px;
+  padding: 1rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem 10rem;
+  background-color: #1f2937;
+  border-radius: 10px;
+}
+
+.queries {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.queries-heading {
+  margin: 15 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.queries-text {
+  margin: 10 0;
+  padding: 0;
+  font-size: 0.8rem;
+}
+
+.queries-logo {
+  display: flex;
+  flex-direction: row;
+}
+
+.queries-container:hover {
+  /* increase the size of everything inside */
+  transform: scale(1.1);
+  transition: transform 0.5s;
+}
+
+/* hidden stuff */
+
+.hidden {
+  display: none;
+}
+
+.revealed {
+  display: block;
 }

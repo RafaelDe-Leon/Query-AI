@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="test.js" defer></script>
   <link rel="stylesheet" href="style.css">
   <title>Query AI</title>
 </head>
@@ -13,16 +14,16 @@
     <h1>Query AI</h1>
     <p>Search Engine for Queries</p>
     <div>
-      <a href="#">Assitant</a>
-      <a href="#">Generator</a>
-      <a href="#">Lab</a>
+      <button href="#">Assitant</button>
+      <button href="#">Generator</button>
+      <button href="#">Lab</button>
     </div>
     <input type="search">
     <button>Search</button>
 
-    <a href="#">Show Advanced Filters</a>
+    <button onclick="revealContent(this, 'hiddenContent')">Show Advanced Filters</button>
 
-    <div>
+    <div id="hiddenContent" class="hidden">
       <label for="table">Table:</label>
       <select id="table" name="table">
         <option value="1">option 1</option>
@@ -53,26 +54,106 @@
       </select>
     </div>
 
-    <a href="#">Statistics</a>
+    <button href="#">Statistics</button>
 
-    <div>
-      <p>Lorem, ipsum dolor.</p>
-      <span>Author: First Last</span> <span>Released: 12/5/23</span>
-      <img
-        src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
-        alt="logo" style="width: 20px">
-      <img
-        src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
-        alt="logo" style="width: 20px">
-      <img
-        src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
-        alt="logo" style="width: 20px">
-      <img
-        src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
-        alt="logo" style="width: 20px">
-      <img
-        src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
-        alt="logo" style="width: 20px">
+    <section class="queries-container">
+      <div class="queries">
+        <p class="queries-heading">Lorem, ipsum dolor.</p>
+        <p class="queries-text"> Author: First Last, Released: 12/5/23</p>
+      </div>
+
+      <div class="queries-logo">
+        <img
+          src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+          alt="logo" style="width: 20px">
+        <img
+          src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+          alt="logo" style="width: 20px">
+        <img
+          src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+          alt="logo" style="width: 20px">
+        <img
+          src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+          alt="logo" style="width: 20px">
+        <img
+          src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+          alt="logo" style="width: 20px">
+      </div>
+    </section>
+    <section class="queries-container">
+      <div class="queries">
+        <p class="queries-heading">Lorem, ipsum dolor.</p>
+        <p class="queries-text"> Author: First Last, Released: 12/5/23</p>
+      </div>
+
+      <div class="queries-logo">
+        <img
+          src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+          alt="logo" style="width: 20px">
+        <img
+          src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+          alt="logo" style="width: 20px">
+        <img
+          src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+          alt="logo" style="width: 20px">
+        <img
+          src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+          alt="logo" style="width: 20px">
+        <img
+          src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+          alt="logo" style="width: 20px">
+      </div>
+    </section>
+    <section class="queries-container">
+      <div class="queries">
+        <p class="queries-heading">Lorem, ipsum dolor.</p>
+        <p class="queries-text"> Author: First Last, Released: 12/5/23</p>
+      </div>
+
+      <div class="queries-logo">
+        <img
+          src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+          alt="logo" style="width: 20px">
+        <img
+          src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+          alt="logo" style="width: 20px">
+        <img
+          src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+          alt="logo" style="width: 20px">
+        <img
+          src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+          alt="logo" style="width: 20px">
+        <img
+          src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+          alt="logo" style="width: 20px">
+      </div>
+    </section>
+    <div class="container-test">
+
+      <section class="queries-container">
+        <div class="queries">
+          <p class="queries-heading">Lorem, ipsum dolor.</p>
+          <p class="queries-text"> Author: First Last, Released: 12/5/23</p>
+        </div>
+
+        <div class="queries-logo">
+          <img
+            src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+            alt="logo" style="width: 20px">
+          <img
+            src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+            alt="logo" style="width: 20px">
+          <img
+            src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+            alt="logo" style="width: 20px">
+          <img
+            src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+            alt="logo" style="width: 20px">
+          <img
+            src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-png-instagram-logo-camel-productions-website-25.png"
+            alt="logo" style="width: 20px">
+        </div>
+      </section>
     </div>
   </div>
 </body>
