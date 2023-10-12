@@ -1,0 +1,21 @@
+# Ignore project-specific files and directories
+/node_modules/
+/dist/
+/build/
+/.env
+.env.local
+.env.*.local
+.cache/
+.log/
+npm-debug.log*
+yarn-error.log*
+
+# Ignore dependency lock files
+yarn.lock
+package-lock.json
+
+# Ignore OS generated files
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
