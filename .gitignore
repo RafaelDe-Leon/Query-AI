@@ -19,3 +19,6 @@ package-lock.json
 ehthumbs.db
 Icon?
 Thumbs.db
+
+# this is to start the json server
+# json-server --watch db.json
