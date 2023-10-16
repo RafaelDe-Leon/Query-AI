@@ -20,6 +20,9 @@ async function fetchDataAndCreateElements() {
     }
     const data = await response.json()
 
+    // Select the section element where you want to create the data
+    const container = document.querySelector('.container')
+
     // Loop through the data to create HTML elements
     for (const key in data.name) {
       const name = data.name[key]
@@ -59,7 +62,7 @@ async function fetchDataAndCreateElements() {
       section.appendChild(queriesDiv)
       section.appendChild(logoDiv)
 
-      document.body.appendChild(section)
+      container.appendChild(section)
     }
   } catch (error) {
     console.error('Error:', error)
