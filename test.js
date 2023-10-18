@@ -14,19 +14,20 @@ function revealContent(button, contentId) {
 async function fetchDataAndCreateElements() {
   try {
     // Fetch data from your database or server
-    const response = await fetch('http://localhost:3000/db')
+    const response = await fetch('http://localhost:3000/data')
     if (!response.ok) {
       throw new Error('Network response was not ok')
     }
+
     const data = await response.json()
 
     // Select the section element where you want to create the data
     const container = document.querySelector('.container')
 
     // Loop through the data to create HTML elements
-    for (const key in data.name) {
-      const name = data.name[key]
-      const author = data.author[key]
+    for (const item of data) {
+      const name = item.name
+      const author = item.author
 
       const section = document.createElement('section')
       section.classList.add('queries-container')

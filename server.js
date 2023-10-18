@@ -1,4 +1,5 @@
 require('dotenv').config()
+const cors = require('cors')
 
 const { MongoClient } = require('mongodb')
 const express = require('express')
@@ -9,6 +10,9 @@ const port = 3000
 
 // Serve static files from the "public" directory
 app.use(express.static(__dirname))
+
+// Enable CORS
+app.use(cors())
 
 async function fetchData() {
   // Connection URL
@@ -35,8 +39,7 @@ async function fetchData() {
     const query = {} // This empty query object will match all documents in the collection
     const data = await collection.find(query).toArray()
 
-    // Log the data
-    console.log(data)
+    return data
   } finally {
     // Ensure the client is closed
     await client.close()
@@ -48,6 +51,17 @@ fetchData().catch(console.error)
 
 app.get('/', (req, res) => {
   res.send(path.join(__dirname, 'public', 'index.html'))
+})
+
+app.get('/data', async (req, res) => {
+  try {
+    const data = await fetchData()
+    console.log(data) // Log data to server console
+    res.json(data)
+  } catch (error) {
+    console.error(error)
+    res.status(500).send('Server Error')
+  }
 })
 
 app.listen(port, () => {
