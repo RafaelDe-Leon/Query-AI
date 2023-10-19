@@ -40,6 +40,7 @@ async function fetchData() {
     // Query the collection
     const query = {} // This empty query object will match all documents in the collection
     const data = await collection.find(query).toArray()
+
     return data
   } finally {
     // Ensure the client is closed
