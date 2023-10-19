@@ -16,8 +16,8 @@ app.use(cors())
 
 async function fetchData() {
   // Connection URL
-  // const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/SPLSEARCH'
-  const url = process.env.MONGODB_URI
+  const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/SPLSEARCH'
+  // const url = process.env.MONGODB_URI
 
   // Database Name
   const dbName = 'SPLSEARCH'
