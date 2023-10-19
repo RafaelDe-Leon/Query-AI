@@ -14,7 +14,9 @@ function revealContent(button, contentId) {
 async function fetchDataAndCreateElements() {
   try {
     // Fetch data from your database or server
-    const response = await fetch(`/api/data`)
+    const isLocal =
+      window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    const response = await fetch(`${isLocal ? '/data' : '/api/data'}`)
     if (!response.ok) {
       throw new Error('Network response was not ok')
     }
