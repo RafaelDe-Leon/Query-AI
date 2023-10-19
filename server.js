@@ -53,13 +53,13 @@ app.get('/', (req, res) => {
   res.send(path.join(__dirname, 'public', 'index.html'))
 })
 
-app.get('/config', (req, res) => {
-  const config = {
-    baseUrl:
-      process.env.NODE_ENV === 'production' ? process.env.MONGODB_URI : 'http://localhost:3000',
-  }
-  res.json(config)
-})
+// app.get('/config', (req, res) => {
+//   const config = {
+//     baseUrl:
+//       process.env.NODE_ENV === 'production' ? process.env.MONGODB_URI : 'http://localhost:3000',
+//   }
+//   res.json(config)
+// })
 
 app.get('/data', async (req, res) => {
   try {
