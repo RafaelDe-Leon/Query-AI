@@ -20,7 +20,7 @@ async function fetchDataAndCreateElements() {
     }
 
     const data = await response.json()
-    console.log(data)
+
     // Select the section element where you want to create the data
     const container = document.querySelector('.container')
 
