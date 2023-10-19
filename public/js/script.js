@@ -72,4 +72,4 @@ async function fetchDataAndCreateElements() {
 // when button is pressed on html run this fetchDataAndCreateElements function
 
 // Call the fetchDataAndCreateElements function to fetch data and create HTML elements
-// fetchDataAndCreateElements()
+fetchDataAndCreateElements()
