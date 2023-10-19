@@ -6,7 +6,7 @@ const express = require('express')
 const path = require('path')
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 // Serve static files from the "public" directory
 app.use(express.static(__dirname))
@@ -16,10 +16,8 @@ app.use(cors())
 
 async function fetchData() {
   // Connection URL
-  // const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/SPLSEARCH'
+  const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/SPLSEARCH'
   // const url = process.env.MONGODB_URI
-  const url =
-    'mongodb+srv://splsearch:PTSCPnkAcS3frt59@cluster0.qkpjsnq.mongodb.net/?retryWrites=true&w=majority'
 
   // Database Name
   const dbName = 'SPLSEARCH'
