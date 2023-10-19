@@ -16,8 +16,10 @@ app.use(cors())
 
 async function fetchData() {
   // Connection URL
-  const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/SPLSEARCH'
+  // const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/SPLSEARCH'
   // const url = process.env.MONGODB_URI
+  const url =
+    'mongodb+srv://splsearch:PTSCPnkAcS3frt59@cluster0.qkpjsnq.mongodb.net/?retryWrites=true&w=majority'
 
   // Database Name
   const dbName = 'SPLSEARCH'
@@ -38,7 +40,6 @@ async function fetchData() {
     // Query the collection
     const query = {} // This empty query object will match all documents in the collection
     const data = await collection.find(query).toArray()
-
     return data
   } finally {
     // Ensure the client is closed
