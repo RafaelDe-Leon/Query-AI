@@ -11,10 +11,26 @@ function revealContent(button, contentId) {
   }
 }
 
+// Determine the base URL based on the environment
+let baseUrl
+async function fetchConfig() {
+  const response = await fetch('/config')
+  if (!response.ok) {
+    throw new Error('Network response was not ok')
+  }
+  const config = await response.json()
+  baseUrl = config.baseUrl
+}
+
 async function fetchDataAndCreateElements() {
   try {
+    // Ensure config is fetched before proceeding
+    if (!baseUrl) {
+      await fetchConfig()
+    }
+
     // Fetch data from your database or server
-    const response = await fetch('http://localhost:3000/data')
+    const response = await fetch(`${baseUrl}/data`)
     if (!response.ok) {
       throw new Error('Network response was not ok')
     }
