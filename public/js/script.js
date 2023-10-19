@@ -14,7 +14,7 @@ function revealContent(button, contentId) {
 async function fetchDataAndCreateElements() {
   try {
     // Fetch data from your database or server
-    const response = await fetch(`/data`)
+    const response = await fetch(`/api/data`)
     if (!response.ok) {
       throw new Error('Network response was not ok')
     }
