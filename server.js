@@ -9,7 +9,7 @@ const app = express()
 const port = process.env.PORT || 3000
 
 // Serve static files from the "public" directory
-app.use(express.static(__dirname))
+app.use(express.static(path.join(__dirname, 'public')))
 
 // Enable CORS
 app.use(cors())
@@ -50,7 +50,7 @@ async function fetchData() {
 fetchData().catch(console.error)
 
 app.get('/', (req, res) => {
-  res.send(path.join(__dirname, 'public', 'public/index.html'))
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
 app.get('/data', async (req, res) => {
