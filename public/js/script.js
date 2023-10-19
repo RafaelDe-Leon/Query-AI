@@ -73,7 +73,3 @@ async function fetchDataAndCreateElements() {
 
 // Call the fetchDataAndCreateElements function to fetch data and create HTML elements
 // fetchDataAndCreateElements()
-
-// Add an event listener to the button element
-const button = document.querySelector('#test')
-button.addEventListener('click', fetchDataAndCreateElements)
