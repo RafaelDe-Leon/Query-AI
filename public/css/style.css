@@ -63,7 +63,7 @@ body {
   background-color: rgb(33, 122, 231);
 }
 .search-bar {
-  width: 89%;
+  width: 100%;
   padding: 0.75rem 1rem;
   background-color: #1f2937;
   border: lightgrey;
