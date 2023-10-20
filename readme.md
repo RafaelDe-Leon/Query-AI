@@ -1,67 +1,51 @@
-You can find the live site here: [https://rafaelde-leon.github.io/SplSearch/](https://spl-search.vercel.app/)https://spl-search.vercel.app/
 
-Below is a concise tutorial in Markdown format to guide users on how to build the Docker Mongo image, run queries, and delete the container:
+# SPL Search
 
----
+You can find the live site here: https://rafaelde-leon.github.io/SplSearch/
 
-## MongoDB Docker Tutorial
+This is where the description of the project will go.
 
-### 1. Building the Docker Image
+## How to Run This App
 
-Navigate to the directory containing the Dockerfile and run:
+Follow these steps to get this app up and running on your local machine:
 
-```bash
-docker build -t custom-mongo .
-```
+### 1. Install Node.js
 
-This will create a Docker image named `custom-mongo`.
-
-### 2. Running MongoDB in Docker
-
-To run the MongoDB instance with port 27017 exposed:
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine. You can check if Node is installed by running the following command in your terminal:
 
 ```bash
-docker run -d -p 27017:27017 custom-mongo
+node -v
+2. Clone the Repository
+Clone the GitHub repository to your local machine using the following command, replacing your-repo-url with the actual URL of the repository:
+
+bash
+Copy code
+git clone your-repo-url
+3. Navigate to the Project Directory
+Change your directory to the project folder:
+
+bash
+Copy code
+cd path-to-your-project
+4. Create a .env File
+Create a .env file in the root directory of your project, and add the following line with your MongoDB connection details:
+
+env
+Copy code
+MONGODB_URI="your-mongoDB-information"
+5. Install Dependencies
+Install the necessary dependencies by running the following command in the project directory:
+
+bash
+Copy code
+npm install
+6. Run the App
+Now that all the prerequisites are installed, start the app with the following command:
+
+bash
+Copy code
+npm start
+7. Access the App
+Once the app is running, you can access it in your web browser at http://localhost:3000, unless the app is configured to run on a different port.
 ```
 
-This command will start the MongoDB container with port 27017 on your host machine mapped to port 27017 on the container.
-
-### 3. Running a Query
-
-If you want to run a MongoDB shell to execute a query on the running MongoDB instance:
-
-```bash
-docker exec -it $(docker ps -q --filter ancestor=custom-mongo) mongosh --eval "db['splunk.queries'].find().limit(5).pretty();"
-```
-
-This will display the first 5 entries from the `splunk.queries` collection.
-
-### 4. Deleting the Docker Container
-
-To stop and remove the MongoDB container:
-
-1. Identify the container ID:
-
-    ```bash
-    docker ps
-    ```
-
-   Look for the container with the image `custom-mongo` and note its container ID.
-
-2. Stop the container:
-
-    ```bash
-    docker stop <CONTAINER_ID>
-    ```
-
-3. Remove the container:
-
-    ```bash
-    docker rm <CONTAINER_ID>
-    ```
-
-Replace `<CONTAINER_ID>` with the actual ID you noted in the first step.
-
----
-
-With these steps, you can build the MongoDB Docker image, run the database with port 27017 open, run queries, and then delete the container when you're done.
