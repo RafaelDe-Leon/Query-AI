@@ -78,20 +78,20 @@ async function fetchDataAndCreateElements() {
 fetchDataAndCreateElements();
 
 function searchFunction() {
-  var input, filter, authorQuery, pSection, pAuthor, i, txtValue;
+  var input, filter, pAuthor, i, txtValue;
   input = document.getElementById('searchInput');
   filter = input.value.toUpperCase();
-  authorQuery = document.getElementsByClassName('queries-text');
-  pSection = $("section[class='queries-container']");
-  pAuthor = $("p[class='queries-text']");
+  sectionTags = document.getElementsByTagName('section');
+  pAuthor = document.getElementsByClassName('queries-text');
 
   for (i = 0; i < pAuthor.length; i++) {
     txtValue = pAuthor[i].innerText;
+    // Removing the word "Author:" from search
     txtValueName = txtValue.substr(txtValue.indexOf(' ') + 1);
     if (txtValueName.toUpperCase().indexOf(filter) > -1) {
-      pSection[i].style.display = '';
+      sectionTags[i].style.display = '';
     } else {
-      pSection[i].style.display = 'none';
+      sectionTags[i].style.display = 'none';
     }
   }
 }
