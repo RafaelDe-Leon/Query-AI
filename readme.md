@@ -1,3 +1,4 @@
+
 # SPL Search
 
 You can find the live site here: https://rafaelde-leon.github.io/SplSearch/
@@ -47,3 +48,4 @@ npm start
 7. Access the App
 Once the app is running, you can access it in your web browser at http://localhost:3000, unless the app is configured to run on a different port.
 ```
+
