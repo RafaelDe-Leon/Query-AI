@@ -78,20 +78,25 @@ async function fetchDataAndCreateElements() {
 fetchDataAndCreateElements()
 
 function searchFunction() {
-  var input, filter, pAuthor, i, txtValue
-  input = document.getElementById('searchInput')
-  filter = input.value.toUpperCase()
-  sectionTags = document.getElementsByTagName('section')
-  pAuthor = document.getElementsByClassName('queries-text')
+  const input = document.getElementById('searchInput')
+  const filter = input.value.toUpperCase()
+  const sectionTags = document.getElementsByTagName('section')
+  const pAuthor = document.getElementsByClassName('queries-text')
 
-  for (i = 0; i < pAuthor.length; i++) {
-    txtValue = pAuthor[i].innerText
-    // Removing the word "Author:" from search
-    txtValueName = txtValue.substr(txtValue.indexOf(' ') + 1)
-    if (txtValueName.toUpperCase().indexOf(filter) > -1) {
-      sectionTags[i].style.display = ''
-    } else {
-      sectionTags[i].style.display = 'none'
-    }
+  if (!filter) {
+    // Check if the filter is empty
+    Array.from(sectionTags).forEach((section) => {
+      section.style.display = '' // Reset the display style of all sections
+    })
+    return // Exit the function early
   }
+
+  Array.from(pAuthor).forEach((author, i) => {
+    const txtValue = author.innerText
+    // Removing the word "Author:" from search
+    const txtValueName = txtValue.replace(/^Author:\s*/, '')
+    sectionTags[i].style.display = txtValueName.toUpperCase().includes(filter)
+      ? ''
+      : 'none'
+  })
 }
