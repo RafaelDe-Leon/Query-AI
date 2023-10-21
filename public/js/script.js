@@ -27,6 +27,15 @@ async function fetchDataAndCreateElements() {
     // Select the section element where you want to create the data
     const container = document.querySelector('.container')
 
+    // Select the author select element
+    const authorSelect = document.getElementById('author')
+
+    // Create and append an initial empty option
+    const initialOption = document.createElement('option')
+    initialOption.textContent = '' // Empty text content
+    initialOption.value = '' // Empty value
+    authorSelect.appendChild(initialOption)
+
     // Loop through the data to create HTML elements
     for (const item of data) {
       const name = item.name
@@ -63,6 +72,20 @@ async function fetchDataAndCreateElements() {
         logoDiv.appendChild(img)
       }
 
+      // Create a new option for each author
+      const option = document.createElement('option')
+      option.textContent = author
+      option.value = author
+      authorSelect.appendChild(option)
+
+      // remove duplicate authors
+      const options = document.querySelectorAll('#author option')
+      const values = Array.from(options).map((option) => option.value)
+      const uniqueValues = [...new Set(values)]
+      authorSelect.innerHTML = uniqueValues
+        .map((value) => `<option value="${value}">${value}</option>`)
+        .join('')
+
       section.appendChild(queriesDiv)
       section.appendChild(logoDiv)
 
@@ -72,31 +95,32 @@ async function fetchDataAndCreateElements() {
     console.error('Error:', error)
   }
 }
-// when button is pressed on html run this fetchDataAndCreateElements function
 
 // Call the fetchDataAndCreateElements function to fetch data and create HTML elements
 fetchDataAndCreateElements()
 
-function searchFunction() {
+function filterResults() {
   const input = document.getElementById('searchInput')
   const filter = input.value.toUpperCase()
+  const authorSelect = document.getElementById('author')
+  const selectedAuthor = authorSelect.value
+
   const sectionTags = document.getElementsByTagName('section')
   const pAuthor = document.getElementsByClassName('queries-text')
 
-  if (!filter) {
-    // Check if the filter is empty
-    Array.from(sectionTags).forEach((section) => {
-      section.style.display = '' // Reset the display style of all sections
-    })
-    return // Exit the function early
-  }
+  Array.from(sectionTags).forEach((section, i) => {
+    const authorText = pAuthor[i].innerText
+    const authorName = authorText.replace(/^Author:\s*/, '')
 
-  Array.from(pAuthor).forEach((author, i) => {
-    const txtValue = author.innerText
-    // Removing the word "Author:" from search
-    const txtValueName = txtValue.replace(/^Author:\s*/, '')
-    sectionTags[i].style.display = txtValueName.toUpperCase().includes(filter)
-      ? ''
-      : 'none'
+    // Check if the section matches the selected author, only if an author is selected
+    const matchesAuthor = selectedAuthor ? authorName === selectedAuthor : true
+
+    // Check if the author name includes the text input filter, only if text is entered
+    const matchesFilter = filter
+      ? authorName.toUpperCase().includes(filter)
+      : true
+
+    // Show or hide the section based on whether it matches all criteria
+    section.style.display = matchesAuthor && matchesFilter ? '' : 'none'
   })
 }

@@ -19,7 +19,7 @@
       <button class="danger-btn btns-hover" href="#">Lab</button>
     </div>
     <span class="search-bar-container">
-      <input class="search-bar" id="searchInput" oninput="searchFunction()" placeholder="Search By Author"
+      <input class="search-bar" id="searchInput" oninput="filterResults()" placeholder="Search By Author"
         type="search" />
       <space />
     </span>
@@ -37,11 +37,7 @@
         <option value="4">option 4</option>
       </select>
       <label for="author">Author:</label>
-      <select id="author" name="author">
-        <option value="1">option 1</option>
-        <option value="2">option 2</option>
-        <option value="3">option 3</option>
-        <option value="4">option 4</option>
+      <select id="author" name="author" onchange="filterResults()">
       </select>
       <label for="keyword">Keyword:</label>
       <select id="keyword" name="keyword">
