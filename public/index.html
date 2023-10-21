@@ -1,68 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Query AI</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="js/script.js" defer></script>
-  <link rel="stylesheet" href="/css/style.css">
-  <title>Query AI</title>
-</head>
+  <body>
+    <div class="container center">
+      <h1 class="mb-2">Query AI</h1>
+      <p class="p-heading">Search Engine for Queries</p>
+      <div class="header-button-container">
+        <button class="primary-btn btns-hover" href="#">Assitant</button>
+        <button class="success-btn btns-hover" href="#">Generator</button>
+        <button class="danger-btn btns-hover" href="#">Lab</button>
+      </div>
+      <span class="search-bar-container">
+        <input
+          class="search-bar"
+          id="searchInput"
+          onkeyup="searchFunction()"
+          placeholder="Search By Author"
+          type="search"
+        />
+        <space />
+      </span>
 
-<body>
-  <div class="container center">
+      <button onclick="revealContent(this, 'hiddenContent')">
+        Show Advanced Filters
+      </button>
 
+      <div id="hiddenContent" class="hidden">
+        <label for="table">Table:</label>
+        <select id="table" name="table">
+          <option value="1">option 1</option>
+          <option value="2">option 2</option>
+          <option value="3">option 3</option>
+          <option value="4">option 4</option>
+        </select>
+        <label for="author">Author:</label>
+        <select id="author" name="author">
+          <option value="1">option 1</option>
+          <option value="2">option 2</option>
+          <option value="3">option 3</option>
+          <option value="4">option 4</option>
+        </select>
+        <label for="keyword">Keyword:</label>
+        <select id="keyword" name="keyword">
+          <option value="1">option 1</option>
+          <option value="2">option 2</option>
+          <option value="3">option 3</option>
+          <option value="4">option 4</option>
+        </select>
+        <label for="operator">Operator:</label>
+        <select id="operator" name="operator">
+          <option value="1">option 1</option>
+          <option value="2">option 2</option>
+          <option value="3">option 3</option>
+          <option value="4">option 4</option>
+        </select>
+      </div>
 
-    <h1 class="mb-2">Query AI</h1>
-    <p class="p-heading">Search Engine for Queries</p>
-    <div class="header-button-container">
-      <button class="primary-btn btns-hover" href="#">Assitant</button>
-      <button class="success-btn btns-hover" href="#">Generator</button>
-      <button class="danger-btn btns-hover" href="#">Lab</button>
+      <button href="#">Statistics</button>
 
-    </div>
-    <span class="search-bar-container">
-      <input class="search-bar" placeholder="Search" type="search" />
-      <space />
-      <button class="search-button">Search</button>
-    </span>
-
-    <button onclick="revealContent(this, 'hiddenContent')">Show Advanced Filters</button>
-
-    <div id="hiddenContent" class="hidden">
-      <label for="table">Table:</label>
-      <select id="table" name="table">
-        <option value="1">option 1</option>
-        <option value="2">option 2</option>
-        <option value="3">option 3</option>
-        <option value="4">option 4</option>
-      </select>
-      <label for="author">Author:</label>
-      <select id="author" name="author">
-        <option value="1">option 1</option>
-        <option value="2">option 2</option>
-        <option value="3">option 3</option>
-        <option value="4">option 4</option>
-      </select>
-      <label for="keyword">Keyword:</label>
-      <select id="keyword" name="keyword">
-        <option value="1">option 1</option>
-        <option value="2">option 2</option>
-        <option value="3">option 3</option>
-        <option value="4">option 4</option>
-      </select>
-      <label for="operator">Operator:</label>
-      <select id="operator" name="operator">
-        <option value="1">option 1</option>
-        <option value="2">option 2</option>
-        <option value="3">option 3</option>
-        <option value="4">option 4</option>
-      </select>
-    </div>
-
-    <button href="#">Statistics</button>
-
-    <!-- <section class="queries-container">
+      <!-- <section class="queries-container">
       <div class="queries">
         <p class="queries-heading">Lorem, ipsum dolor.</p>
         <p class="queries-text"> Author: First Last, Released: 12/5/23</p>
@@ -86,9 +89,6 @@
           alt="logo" style="width: 20px">
       </div>
     </section> -->
-
-
-  </div>
-</body>
-
+    </div>
+  </body>
 </html>

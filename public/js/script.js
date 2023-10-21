@@ -15,7 +15,8 @@ async function fetchDataAndCreateElements() {
   try {
     // Fetch data from your database or server
     const isLocal =
-      window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+      window.location.hostname === 'localhost' ||
+      window.location.hostname === '127.0.0.1'
     const response = await fetch(`${isLocal ? '/data' : '/api/data'}`)
     if (!response.ok) {
       throw new Error('Network response was not ok')
@@ -75,3 +76,22 @@ async function fetchDataAndCreateElements() {
 
 // Call the fetchDataAndCreateElements function to fetch data and create HTML elements
 fetchDataAndCreateElements()
+
+function searchFunction() {
+  var input, filter, pAuthor, i, txtValue
+  input = document.getElementById('searchInput')
+  filter = input.value.toUpperCase()
+  sectionTags = document.getElementsByTagName('section')
+  pAuthor = document.getElementsByClassName('queries-text')
+
+  for (i = 0; i < pAuthor.length; i++) {
+    txtValue = pAuthor[i].innerText
+    // Removing the word "Author:" from search
+    txtValueName = txtValue.substr(txtValue.indexOf(' ') + 1)
+    if (txtValueName.toUpperCase().indexOf(filter) > -1) {
+      sectionTags[i].style.display = ''
+    } else {
+      sectionTags[i].style.display = 'none'
+    }
+  }
+}
