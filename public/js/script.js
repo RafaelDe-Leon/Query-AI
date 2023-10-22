@@ -33,7 +33,7 @@ async function fetchDataAndCreateElements() {
     // Create and append an initial empty option
     const initialOption = document.createElement('option')
     initialOption.textContent = '' // Empty text content
-    initialOption.value = '' // Empty value
+    initialOption.value = 'Select All' // select all
     authorSelect.appendChild(initialOption)
 
     // Loop through the data to create HTML elements
@@ -111,6 +111,16 @@ function filterResults() {
   Array.from(sectionTags).forEach((section, i) => {
     const authorText = pAuthor[i].innerText
     const authorName = authorText.replace(/^Author:\s*/, '')
+
+    // check if the option matches initioal option, if match then show all
+    const option = document.getElementById('author')
+    const initialOption = option.value
+
+    // if initial option is selected, show all
+    if (initialOption === 'Select All') {
+      section.style.display = ''
+      return
+    }
 
     // Check if the section matches the selected author, only if an author is selected
     const matchesAuthor = selectedAuthor ? authorName === selectedAuthor : true
